@@ -7,7 +7,9 @@
     "start": "npm run build && node build/index.js",
     "dev": "npx nodemon",
     "build": "rimraf ./build && tsc",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "test": "",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
