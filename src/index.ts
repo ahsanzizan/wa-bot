@@ -10,12 +10,11 @@ const bootstrap = (client: Client) => {
   // Listen to any messages received
   client.onAnyMessage(async (message: Message) => {
     // If the message is coming from the user
-
     if (message.fromMe) {
       const messageIsCommand = isCommand(message.body);
 
       if (messageIsCommand) {
-        logWithColor.green(`Received command: ${message.fromMe}\n`);
+        logWithColor.green(`Received command: ${message.body}\n`);
       }
     }
   });
