@@ -6,7 +6,7 @@ A free, open source, and simple WhatsApp API Replacement.
 
 ## Features
 
-- I(legally) Decrypts view once images
+- (I)legally Decrypts view once images
 - Sends the decrypted image in the chat
 - **MORE FEATURES COMING SOON!**
 
@@ -14,7 +14,7 @@ A free, open source, and simple WhatsApp API Replacement.
 
 ### Step 1: Clone the repository
 Download this repository OR use git to clone it.
-```
+```bash
 # Make sure you have git before running this command
 git clone https://github.com/ahsanzizan/wa-bot.git
 ```
@@ -22,7 +22,7 @@ Open the folder in Terminal / VS Code
 
 ### Step 2: Install node modules
 This will install all of the modules and dependencies needed to run the app.
-```
+```bash
 npm i
 # OR
 yarn add
@@ -31,7 +31,7 @@ Wait until it has finished installing all of them.
 
 ### Step 3: Run the app
 You can use this command to run the app:
-```
+```bash
 npm start
 ```
 
