@@ -8,8 +8,7 @@
     "dev": "npx nodemon",
     "build": "rimraf ./build && tsc",
     "lint": "eslint . --ext .ts",
-    "test": "",
-    "prepare": "husky install"
+    "test": ""
   },
   "keywords": [],
   "author": "",
@@ -27,5 +26,10 @@
   "dependencies": {
     "@open-wa/wa-automate": "^4.67.0",
     "husky": "^9.0.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
   }
 }
