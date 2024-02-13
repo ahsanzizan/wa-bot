@@ -13,12 +13,16 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0",
     "nodemon": "^3.0.3",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@open-wa/wa-automate": "^4.67.0"
+    "@open-wa/wa-automate": "^4.67.0",
+    "husky": "^9.0.10"
   }
 }
