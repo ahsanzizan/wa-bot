@@ -6,8 +6,8 @@ A free, open source, and simple WhatsApp API Replacement.
 
 ## Features
 
-- (I)legally Decrypts view once images
-- Sends the decrypted image in the chat
+- (I)legally Decrypts view once images, then sends the decrypted image in the chat
+- Sends sticker from a replied image text
 - **MORE FEATURES COMING SOON!**
 
 ## How To Run
