@@ -20,6 +20,8 @@ const storeImageInDist = (filename: string, image: Buffer) => {
 
     logWithColor.green(`Successfully stored the image at ${FILEPATH}`);
   });
+
+  return FILEPATH;
 };
 
 /**
@@ -52,11 +54,11 @@ const decryptViewOncePhoto = async (
       )}`;
 
       // Store the image
-      storeImageInDist(filename, decryptedImage);
+      const FILEPATH  = storeImageInDist(filename, decryptedImage);
 
       // Sends the image back to the sender
       if (sendBack)
-        await sendImageMessage(client, message.chatId, base64, filename);
+        await sendImageMessage(client, message.chatId, FILEPATH, filename);
 
       return base64;
     } catch (error) {

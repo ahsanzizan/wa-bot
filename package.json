@@ -26,6 +26,7 @@
   "dependencies": {
     "@open-wa/wa-automate": "^4.67.0",
     "@types/mime-types": "^2.1.4",
+    "dotenv": "^16.4.4",
     "husky": "^9.0.10",
     "mime-types": "^2.1.35"
   },
