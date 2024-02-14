@@ -28,7 +28,7 @@ const bootstrap = (client: Client) => {
           // "!open_sesame"
           case commandNamesCollection[0]:
             logWithColor.green(`Executing command ${commandName}`);
-            decryptViewOncePhoto(message);
+            decryptViewOncePhoto(client, message);
             logWithColor.green(`Executed ${commandName} successfully`);
             break;
 

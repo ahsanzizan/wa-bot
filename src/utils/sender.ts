@@ -2,7 +2,6 @@ import { ChatId, Client } from "@open-wa/wa-automate";
 
 /**
  * Sends a text message to the desired receiverId.
- * Also saves the decrypted media as a file.
  * @param {Client} client The WhatsApp client instance.
  * @param {ChatId} receiverId The desired receiver ChatId.
  * @param {string} message The message content.
@@ -16,8 +15,7 @@ export const sendTextMessage = async (
 };
 
 /**
- * Sends a text message to the desired receiverId.
- * Also saves the decrypted media as a file.
+ * Sends an image to the desired receiverId.
  * @param {Client} client The WhatsApp client instance.
  * @param {ChatId} receiverId The desired receiver ChatId.
  * @param {string} image Base64 of the to-send image.

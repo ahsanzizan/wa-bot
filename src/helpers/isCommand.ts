@@ -6,8 +6,8 @@ import { commands } from "../utils/userCommands";
  * @param {string} receivedCommand The message received from sender.
  */
 const isCommand = (receivedCommand: string) => {
-  return Boolean(
-    commands.map((command) => command.name).indexOf(receivedCommand)
+  return (
+    commands.map((command) => command.name).indexOf(receivedCommand) !== -1
   );
 };
 
