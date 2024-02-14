@@ -25,24 +25,22 @@ const bootstrap = (client: Client) => {
 
         logWithColor.green(`Received command: ${commandName}\n`);
 
+        logWithColor.green(`Executing command ${commandName}`);
         switch (commandName) {
           // "!open_sesame"
           case commandNamesCollection[0]:
-            logWithColor.green(`Executing command ${commandName}`);
             decryptViewOncePhoto(client, message);
-            logWithColor.green(`Executed ${commandName} successfully`);
             break;
 
           // "!stickerify"
           case commandNamesCollection[1]:
-            logWithColor.green(`Executing command ${commandName}`);
             createAndSendSticker(client, message);
             break;
 
           case commandNamesCollection[2]:
-            logWithColor.green(`Executing command ${commandName}`);
             break;
         }
+        logWithColor.green(`Executed ${commandName} successfully`);
       }
     }
   });

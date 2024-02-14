@@ -1,6 +1,4 @@
 import {
-  Base64,
-  ChatId,
   Client,
   Message,
   StickerMetadata,
