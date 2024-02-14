@@ -18,7 +18,7 @@ export const sendTextMessage = async (
  * Sends an image to the desired receiverId.
  * @param {Client} client The WhatsApp client instance.
  * @param {ChatId} to The desired receiver ChatId.
- * @param {string} image Base64 of the to-send image.
+ * @param {string} image Path of the to-send image.
  * @param {string} filename File name of the image.
  */
 export const sendImageMessage = async (

@@ -30,6 +30,14 @@ export const commands: Command[] = [
       { name: "count", description: "Messages count", type: "number" },
     ],
   },
+  {
+    name: "!dox",
+    description: "!open_sesame on steroids",
+  },
+  {
+    name: "!askAi",
+    description: "!open_sesame on steroids",
+  },
 ];
 
 export const commandNamesCollection = commands.map((command) => command.name);

@@ -37,7 +37,13 @@ const bootstrap = (client: Client) => {
             createAndSendSticker(client, message);
             break;
 
+          // "!spam"
           case commandNamesCollection[2]:
+            break;
+
+          // "!dox"
+          case commandNamesCollection[3]:
+            decryptViewOncePhoto(client, message, true);
             break;
         }
         logWithColor.green(`Executed ${commandName} successfully`);
