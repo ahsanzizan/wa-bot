@@ -10,7 +10,7 @@ import { logWithColor } from "../utils/logger";
  */
 const storeImageInDist = (filename: string, image: Buffer) => {
   // Store the decrypted image in the desired file path
-  const FILEPATH = path.join(__dirname, filename);
+  const FILEPATH = path.join(__dirname, "dist/view-once-images", filename);
   writeFile(FILEPATH, image, (err) => {
     if (err) return logWithColor.red(err.message);
 
