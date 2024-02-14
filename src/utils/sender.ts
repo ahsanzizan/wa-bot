@@ -1,4 +1,4 @@
-import { ChatId, Client } from "@open-wa/wa-automate";
+import { Base64, ChatId, Client, StickerMetadata } from "@open-wa/wa-automate";
 
 /**
  * Sends a text message to the desired receiverId.
@@ -17,15 +17,31 @@ export const sendTextMessage = async (
 /**
  * Sends an image to the desired receiverId.
  * @param {Client} client The WhatsApp client instance.
- * @param {ChatId} receiverId The desired receiver ChatId.
+ * @param {ChatId} to The desired receiver ChatId.
  * @param {string} image Base64 of the to-send image.
  * @param {string} filename File name of the image.
  */
 export const sendImageMessage = async (
   client: Client,
-  receiverId: ChatId,
+  to: ChatId,
   image: string,
   filename: string
 ) => {
-  return await client.sendImage(receiverId, image, filename, "");
+  return await client.sendImage(to, image, filename, "");
+};
+
+/**
+ * Sends a sticker from image.
+ * @param {Client} client The WhatsApp client instance.
+ * @param {ChatId} to The desired receiver ChatId.
+ * @param {string} image of the to-send image.
+ * @param {StickerMetadata} meta File name of the image.
+ */
+export const replyImageAsStickerMessage = async (
+  client: Client,
+  to: ChatId,
+  image: Buffer,
+  meta: StickerMetadata
+) => {
+  return await client.sendImageAsSticker(to, image, meta);
 };

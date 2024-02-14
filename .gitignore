@@ -4,3 +4,9 @@ dist/
 _IGNORE_session/
 build/
 session.data.json
+
+# managed
+**.data.json
+**.node-persist**
+**_IGNORE_**
+# end managed

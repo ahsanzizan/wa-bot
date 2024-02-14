@@ -25,7 +25,9 @@ const storeImageInDist = (filename: string, image: Buffer) => {
 /**
  * Decrypts a quoted message containing media and returns the base64 of the image.
  * Also saves the decrypted media as a file. Sends the image back to the sender (optional).
+ * @param {Client} client The message received from sender.
  * @param {Message} message The message received from sender.
+ * @param {boolean?} sendBack The message received from sender.
  */
 const decryptViewOncePhoto = async (
   client: Client,
@@ -44,9 +46,9 @@ const decryptViewOncePhoto = async (
 
     // Decrypt the encrypted view once image
     const decryptedImage = await decryptMedia(quotedMessage);
-    const base64 = `data:${
-      quotedMessage.mimetype
-    };base64.${decryptedImage.toString("base64")}`;
+    const base64 = `data:${mimeType};base64.${decryptedImage.toString(
+      "base64"
+    )}`;
 
     // Store the image
     storeImageInDist(filename, decryptedImage);

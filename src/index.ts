@@ -3,6 +3,7 @@ import {
   Message,
   create as createWAClient,
 } from "@open-wa/wa-automate";
+import createAndSendSticker from "./helpers/createAndSendSticker";
 import decryptViewOncePhoto from "./helpers/decryptViewOncePhoto";
 import isCommand from "./helpers/isCommand";
 import { logWithColor } from "./utils/logger";
@@ -35,6 +36,7 @@ const bootstrap = (client: Client) => {
           // "!stickerify"
           case commandNamesCollection[1]:
             logWithColor.green(`Executing command ${commandName}`);
+            createAndSendSticker(client, message);
             break;
 
           case commandNamesCollection[2]:
