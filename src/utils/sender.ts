@@ -1,4 +1,4 @@
-import { Base64, ChatId, Client, StickerMetadata } from "@open-wa/wa-automate";
+import { ChatId, Client, StickerMetadata } from "@open-wa/wa-automate";
 
 /**
  * Sends a text message to the desired receiverId.

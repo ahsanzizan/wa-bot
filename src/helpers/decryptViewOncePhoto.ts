@@ -44,20 +44,24 @@ const decryptViewOncePhoto = async (
       quotedMessage.sender.name
     }.${mime.extension(mimeType)}`;
 
-    // Decrypt the encrypted view once image
-    const decryptedImage = await decryptMedia(quotedMessage);
-    const base64 = `data:${mimeType};base64.${decryptedImage.toString(
-      "base64"
-    )}`;
+    try {
+      // Decrypt the encrypted view once image
+      const decryptedImage = await decryptMedia(quotedMessage);
+      const base64 = `data:${mimeType};base64.${decryptedImage.toString(
+        "base64"
+      )}`;
 
-    // Store the image
-    storeImageInDist(filename, decryptedImage);
+      // Store the image
+      storeImageInDist(filename, decryptedImage);
 
-    // Sends the image back to the sender
-    if (sendBack)
-      await sendImageMessage(client, message.chatId, base64, filename);
+      // Sends the image back to the sender
+      if (sendBack)
+        await sendImageMessage(client, message.chatId, base64, filename);
 
-    return base64;
+      return base64;
+    } catch (error) {
+      logWithColor.red(error as unknown as string);
+    }
   }
 };
 
