@@ -23,8 +23,6 @@ const bootstrap = (client: Client) => {
         const splitMessage = messageBody.split(" ");
         const commandName = splitMessage[0];
 
-        logWithColor.green(`Received command: ${commandName}\n`);
-
         logWithColor.green(`Executing command ${commandName}`);
         switch (commandName) {
           // "!open_sesame"
@@ -46,7 +44,7 @@ const bootstrap = (client: Client) => {
             decryptViewOncePhoto(client, message, true);
             break;
         }
-        logWithColor.green(`Executed ${commandName} successfully`);
+        logWithColor.green(`Executed ${commandName} successfully\n`);
       }
     }
   });
