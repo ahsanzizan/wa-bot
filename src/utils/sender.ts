@@ -3,15 +3,15 @@ import { ChatId, Client, StickerMetadata } from "@open-wa/wa-automate";
 /**
  * Sends a text message to the desired receiverId.
  * @param {Client} client The WhatsApp client instance.
- * @param {ChatId} receiverId The desired receiver ChatId.
+ * @param {ChatId} to The desired receiver ChatId.
  * @param {string} message The message content.
  */
 export const sendTextMessage = async (
   client: Client,
-  receiverId: ChatId,
+  to: ChatId,
   message: string
 ) => {
-  return await client.sendText(receiverId, message);
+  return await client.sendText(to, message);
 };
 
 /**
