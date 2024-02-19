@@ -24,7 +24,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@open-wa/wa-automate": "^4.67.0",
+    "@open-wa/wa-automate": "^4.68.0",
     "@types/mime-types": "^2.1.4",
     "dotenv": "^16.4.4",
     "husky": "^9.0.10",
