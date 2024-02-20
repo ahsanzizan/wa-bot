@@ -1,9 +1,8 @@
 import { commands } from "../utils/userCommands";
 
 /**
- * Decrypts a quoted message containing media and returns the base64 of the image.
- * Also saves the decrypted media as a file.
- * @param {string} receivedCommand The message received from sender.
+ * Check if the received message is a command
+ * @param {string} receivedCommand The message received from user.
  */
 const isCommand = (receivedCommand: string) => {
   return (
