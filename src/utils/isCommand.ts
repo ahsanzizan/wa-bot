@@ -5,9 +5,7 @@ import { commands } from "./userCommands";
  * @param {string} receivedCommand The message received from user.
  */
 const isCommand = (receivedCommand: string) => {
-  return (
-    commands.map((command) => command.name).indexOf(receivedCommand) !== -1
-  );
+  return Object.keys(commands).indexOf(receivedCommand) !== -1;
 };
 
 export default isCommand;

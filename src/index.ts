@@ -3,12 +3,9 @@ import {
   Message,
   create as createWAClient,
 } from "@open-wa/wa-automate";
-import createAndSendSticker from "./helpers/createAndSendSticker";
-import spamText from "./helpers/spamText";
-import decryptViewOncePhoto from "./helpers/decryptViewOncePhoto";
 import isCommand from "./utils/isCommand";
 import { logWithColor } from "./utils/logger";
-import { commandNamesCollection } from "./utils/userCommands";
+import { commands } from "./utils/userCommands";
 
 const bootstrap = (client: Client) => {
   // Listen to any messages received
@@ -25,27 +22,13 @@ const bootstrap = (client: Client) => {
         // Command will typically be '!<name> <...params>
 
         logWithColor.green(`Executing command ${commandName}`);
-        switch (commandName) {
-          // "!open_sesame"
-          case commandNamesCollection[0]:
-            decryptViewOncePhoto(client, message);
-            break;
 
-          // "!stickerify"
-          case commandNamesCollection[1]:
-            createAndSendSticker(client, message);
-            break;
+        // Execute the function attribute in the command
+        commands[commandName as keyof typeof commands].function(
+          client,
+          message
+        );
 
-          // "!spam"
-          case commandNamesCollection[2]:
-            spamText(client, message);
-            break;
-
-          // "!dox"
-          case commandNamesCollection[3]:
-            decryptViewOncePhoto(client, message, true);
-            break;
-        }
         logWithColor.green(`Executed ${commandName} successfully\n`);
       }
     }

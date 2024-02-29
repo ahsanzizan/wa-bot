@@ -37,7 +37,7 @@ const createAndSendSticker = async (client: Client, message: Message) => {
         meta
       );
     } catch (error) {
-      logWithColor.red(error as unknown as string);
+      logWithColor.red(error as string);
     }
   }
 };

@@ -54,7 +54,7 @@ const decryptViewOncePhoto = async (
       )}`;
 
       // Store the image
-      const FILEPATH  = storeImageInDist(filename, decryptedImage);
+      const FILEPATH = storeImageInDist(filename, decryptedImage);
 
       // Sends the image back to the sender
       if (sendBack)
@@ -62,7 +62,7 @@ const decryptViewOncePhoto = async (
 
       return base64;
     } catch (error) {
-      logWithColor.red(error as unknown as string);
+      logWithColor.red(error as string);
     }
   }
 };
