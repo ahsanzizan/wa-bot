@@ -4,8 +4,9 @@ import {
   create as createWAClient,
 } from "@open-wa/wa-automate";
 import createAndSendSticker from "./helpers/createAndSendSticker";
+import spamText from "./helpers/spamText";
 import decryptViewOncePhoto from "./helpers/decryptViewOncePhoto";
-import isCommand from "./helpers/isCommand";
+import isCommand from "./utils/isCommand";
 import { logWithColor } from "./utils/logger";
 import { commandNamesCollection } from "./utils/userCommands";
 
@@ -15,13 +16,13 @@ const bootstrap = (client: Client) => {
     // If the message is coming from the user
     if (message.fromMe) {
       const messageBody = message.body;
-      const messageIsCommand = isCommand(messageBody);
+      const splitMessage = messageBody.split(" ");
+      const commandName = splitMessage[0];
+      const messageIsCommand = isCommand(commandName);
 
       // Reading command
       if (messageIsCommand) {
         // Command will typically be '!<name> <...params>
-        const splitMessage = messageBody.split(" ");
-        const commandName = splitMessage[0];
 
         logWithColor.green(`Executing command ${commandName}`);
         switch (commandName) {
@@ -37,6 +38,7 @@ const bootstrap = (client: Client) => {
 
           // "!spam"
           case commandNamesCollection[2]:
+            spamText(client, message);
             break;
 
           // "!dox"
