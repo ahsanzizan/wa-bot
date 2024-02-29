@@ -1,4 +1,4 @@
-import { commands } from "../utils/userCommands";
+import { commands } from "./userCommands";
 
 /**
  * Check if the received message is a command

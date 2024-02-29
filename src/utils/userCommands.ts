@@ -23,8 +23,7 @@ export const commands: Command[] = [
   },
   {
     name: "!spam",
-    description:
-      "Spams a message inputted in `input` by the user `count` time(s)",
+    description: "Spams a message inputted in `input` by the user `count` time(s)",
     params: [
       { name: "input", description: "Message to spam", type: "text" },
       { name: "count", description: "Messages count", type: "number" },
