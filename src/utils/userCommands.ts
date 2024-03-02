@@ -3,6 +3,7 @@ import createAndSendSticker from "../helpers/createAndSendSticker";
 import decryptViewOncePhoto from "../helpers/decryptViewOncePhoto";
 import spamText from "../helpers/spamText";
 import askAi from "../helpers/askAi";
+import killArtists from "../helpers/generateImage";
 
 export const commands = {
   "!open_sesame": {
@@ -36,5 +37,11 @@ export const commands = {
     description: "ask an LLM model",
     params: [{ name: "prompt", description: "Prompt for AI", type: "text" }],
     function: askAi,
+  },
+  "!killArtists": {
+    name: "!killArtists",
+    description: "Generate image from prompt",
+    params: [{ name: "prompt", description: "Prompt for AI", type: "text" }],
+    function: killArtists,
   },
 };
