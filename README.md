@@ -6,8 +6,10 @@ A free, open source, and simple WhatsApp API Replacement.
 
 ## Features
 
-- (I)legally Decrypts view once images, then sends the decrypted image in the chat
+- (I)legally Decrypts view once media, then sends the decrypted media in the chat
 - Sends sticker from a replied image text
+- Spams message
+- AI integration 😉
 - **MORE FEATURES COMING SOON!**
 
 ## How To Run
@@ -46,15 +48,27 @@ i dunno
 
 ## How to use
 
-### Step 1: Find a victim
-Wait for your friend/family/enemy/ex/partner/that one annoying boss/senior/etc. to send you a view once image.
+### Available commands
+- `!stickerify` sends replied image as a sticker.
+- `!open_sesame` decrypts and save view once media to `dist/` folder.
+- `!dox` decrypts, save, and sends view once media in the chat.
+- `!spam <count> <message>` spams `message` `count` amount of time. 
+- `!askai <prompt>` asks a mixtral 7b instruct LLM model. [REQUIRES ADITIONAL SETUP!!!](#setup-askai)
 
-### Step 2: Reply to the chat
+### `!dox` use example
+
+#### Step 1: Find a victim
+Wait for your friend/family/enemy/ex/partner/that one annoying boss/senior/etc. to send you a view once media.
+
+#### Step 2: Reply to the chat
 Quote/Reply to your Victim's View once chat with:
-```!open_sesame```
+```!dox```
 
-### Step 3: Profit
+#### Step 3: Profit
 In a few seconds, the app will save the image to your local directory and send it to the chat.
+
+## **SETUP !askai**
+In order to use `!askai`, you must create a `.env` containing your access key from [huggingface](https://huggingface.co/settings/tokens). You can see the example of the `.env` file in `.env.example`
 
 ## Credits
 - [wa-automate-js](https://github.com/open-wa/wa-automate-nodejs) by [Mohammed Shah](https://github.com/smashah)
