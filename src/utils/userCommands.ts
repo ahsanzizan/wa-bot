@@ -2,6 +2,7 @@ import { Client, Message } from "@open-wa/wa-automate";
 import createAndSendSticker from "../helpers/createAndSendSticker";
 import decryptViewOncePhoto from "../helpers/decryptViewOncePhoto";
 import spamText from "../helpers/spamText";
+import askAi from "../helpers/askAi";
 
 export const commands = {
   "!open_sesame": {
@@ -29,5 +30,11 @@ export const commands = {
     description: "!open_sesame on steroids",
     function: (client: Client, message: Message) =>
       decryptViewOncePhoto(client, message, true),
+  },
+  "!askai": {
+    name: "!askai",
+    description: "ask an LLM model",
+    params: [{ name: "prompt", description: "Prompt for AI", type: "text" }],
+    function: askAi,
   },
 };

@@ -4,6 +4,7 @@ dist/
 _IGNORE_session/
 build/
 session.data.json
+.env
 
 # managed
 **.data.json
