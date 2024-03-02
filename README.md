@@ -68,7 +68,7 @@ Quote/Reply to your Victim's View once chat with:
 In a few seconds, the app will save the image to your local directory and send it to the chat.
 
 ## **SETUP !askai**
-In order to use `!askai`, you must create a `.env` containing your access key from [huggingface](https://huggingface.co/settings/tokens). You can see the example of the `.env` file in `.env.example`
+In order to use `!askai`, you must create a `.env` containing your access key from [openai API](https://platform.openai.com/api-keys). You can see the example of the `.env` file in `.env.example`
 
 ## Credits
 - [wa-automate-js](https://github.com/open-wa/wa-automate-nodejs) by [Mohammed Shah](https://github.com/smashah)

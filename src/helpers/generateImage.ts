@@ -10,16 +10,20 @@ import openaiClient from "../utils/openai";
  * Sends request to ChatGPT then returns the response.
  * @param {string} prompt The chat prompt.
  */
-const generateChat = async (prompt: string) => {
-  // Send request to the ChatGPT model API
+const generateImage = async (prompt: string) => {
+  // Send request to the Dall-E model API
   try {
-    const completion = await openaiClient.chat.completions.create({
-      messages: [{ role: "user", content: prompt }],
-      model: "gpt-3.5-turbo",
+    const response = await openaiClient.images.generate({
+      model: "dall-e-2",
+      prompt,
+      size: "512x512",
+      quality: "standard",
+      n: 1,
+      response_format: "url",
     });
 
     // Return only the generated text
-    return completion.choices[0].message.content;
+    return response.data[0].url;
   } catch (error) {
     logWithColor.red(error as unknown as string);
   }
@@ -30,16 +34,21 @@ const generateChat = async (prompt: string) => {
  * @param {Client} client The message received from sender.
  * @param {Message} message The message received from sender.
  */
-const askAi = async (client: Client, message: Message) => {
+const killArtists = async (client: Client, message: Message) => {
   const splitMessage = message.body.split(" ");
   try {
     const prompt = splitMessage.slice(1).join(" ");
     // Calls generate chat function
-    const response = await generateChat(prompt);
+    const response = await generateImage(prompt);
 
     if (response) {
       // Send the response through WhatsApp chat
-      await sendTextMessage(client, message.chatId, response!);
+      await client.sendImage(
+        message.chatId,
+        response!,
+        prompt,
+        "Here's your art master"
+      );
     } else {
       await sendTextMessage(client, message.chatId, "AI bought some milk");
     }
@@ -48,4 +57,4 @@ const askAi = async (client: Client, message: Message) => {
   }
 };
 
-export default askAi;
+export default killArtists;
